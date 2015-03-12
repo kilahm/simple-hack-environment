@@ -4,17 +4,25 @@ For those who were unable to follow along during my talk at the [SeaPHP](http://
 
 Please note that my talk and these instructions assume you are comfortable using the command line, have installed and know the basics of [Vagrant](https://www.vagrantup.com/), and prefer to use [vim](http://www.vim.org/) over [emacs](http://www.gnu.org/software/emacs/).
 
+## Usage
+
+1. `git clone https://github.com/kilahm/simple-hack-environment.git`
+2. `cd simple-hack-environment`
+3. `vagrant up`
+
+## Explanation
+
 I have added all of the steps I took during the presentation to the inline shell provision script in the Vagrant file.  These steps include:
 
-* Setting the ip address of the virtual machine to 192.168.100.100
-* Increasing the memory available to the virtual machine to 2G
-* Installing apache2, git and hhvm
-* Creating a symbolic link from /var/www/hhvm to /vagrant/hhvm
-* Modifying /etc/apache2/mods-enabled/hhvm_proxy_fcgi.conf to look for hack scripts in /var/www/hhvm instead of /var/www
-* Creating a .hhconfig file in /var/www/hhvm so the type checker will work
-* Creating a sample index.php file in /var/www/hhvm
-* Increasing the http slow query threshold to 1 minute
-* Installing composer globally
+* Set the ip of the virtual machine to 192.168.100.100
+* Increase  the memory available to the virtual machine to 2G
+* Install apache2, git and hhvm
+* Create a sample hack starter project in /vagrant/hhvm
+ * The starter project includes a sample index.php file to serve up, and an .hhconfig file to allow the type checker to work.
+* Create a symbolic link from /var/www/hhvm to /vagrant/hhvm
+* Modify /etc/apache2/mods-enabled/hhvm_proxy_fcgi.conf to look for hack scripts in /var/www/hhvm instead of /var/www
+* Increase the http slow query threshold to 1 minute
+* Install [composer](https://getcomposer.org/) globally
 
 After you run `vagrant up` you should be able to point your browser to http://192.168.100.100/index.php to view the sample file.
 
