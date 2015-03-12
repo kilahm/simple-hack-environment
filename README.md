@@ -27,9 +27,23 @@ I have added all of the steps I took during the presentation to the inline shell
 
 After you run `vagrant up` you should be able to point your browser to http://192.168.100.100/index.php to view the sample file.
 
+## Editing Hack files
+
 I suggest you `vagrant ssh` into your box to actually write Hack code using vim, although there are [plugins](https://github.com/facebook/hhvm/wiki/Hack%20Editor%20Plugins) available for GUI editors as well.
 
-I found installing [spf13-vim](http://vim.spf13.com/) increased the capabilities of vim to almost match those of many GUI text editors.
+I found installing [spf13-vim](http://vim.spf13.com/) increased the capabilities of vim to almost match those of many GUI text editors.  After installing spf13-vim, you should create a local bundles file that contains one line:
+
+Contents of `~/.vimrc.bundles.local`:
+```
+Bundle "hhvm/vim-hack"
+```
+
+Then run:
+```
+vi +BundleInstall
+```
+
+Now when you edit Hack files, the result of the type checker will appear in a split every time a file is written.
 
 ## Troubleshooting 500 level errors
 
