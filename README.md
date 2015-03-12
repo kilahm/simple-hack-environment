@@ -41,3 +41,8 @@ Another source of 500 level errors is a type checker failure.  The log file shou
 This set up is a minimal development environment.  There are many settings to be tweaked for both [apache](http://httpd.apache.org/docs/2.4/configuring.html) and [hhvm](https://github.com/facebook/hhvm/wiki/INI-Settings).  There are also many caching and data persistence tools which are allmost always used for any project of event moderate size.  Care and research must be performed to ensure all of the parts work together.
 
 I personally seperate my hhvm and apache processes in their own [Docker](https://www.docker.com/) containers, which allows me to tightly control the environment for apache and hhvm. Docker also allows me to ensure consistentcy between development, test, and production environments.
+
+# Contributing
+
+If you find these instructions mostly helpful, but you believe there is a better way to explain or describe someting, please submit a pull request!
+If you think the Vagrantfile could use some modification, please be sure to justify your change.  Remember that this is supposed to be the simplest possible environment for playing around with the Hack language.  This is not meant to be an example of a production-ready environment.
