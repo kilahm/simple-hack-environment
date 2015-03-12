@@ -9,6 +9,7 @@ Please note that my talk and these instructions assume you are comfortable using
 1. `git clone https://github.com/kilahm/simple-hack-environment.git`
 2. `cd simple-hack-environment`
 3. `vagrant up`
+4. After vagrant is done provisioning, point your browser at http://192.168.100.100/index.php
 
 ## Explanation
 
